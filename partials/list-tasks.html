@@ -1,0 +1,21 @@
+<header>
+    <div class="name-list">
+        <input type="text" ng-model="list.name" name="listName" class="input-task"/>
+
+        <a href ng-click="createNewTask()"><i class="fa fa-plus-square-o fa-2x"></i></a>
+    </div>
+</header>
+<main>
+
+    <div class="main-tasks">
+        <div ng-repeat="(key, task) in tasks track by key" class="task">
+            <span ng-click="deleteTask(task, key)"><i class="fa fa-circle-o"></i></span>
+            <input type="text" ng-model="tasks[key]" name="task" />
+        </div>
+    </div>
+
+</main>
+<footer>
+    <a href ng-click="deleteList()"><i class="fa fa-minus-square-o fa-2x"></i>Delete list</a>
+</footer>
+

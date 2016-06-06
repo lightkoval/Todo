@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Notes</title>
+    <link rel="stylesheet/less" type="text/css" href="less/style.less"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script src="libs/angular.js"></script>
+    <script src="libs/angular-route.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/controllers.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
+</head>
+<body>
+
+<div class="wrapper">
+
+    <div class="lists" ng-controller="ListCtrl">
+        <header>
+            <div class="todo">ToDo</div>
+        </header>
+        <main>
+            <ul class="main-lists">
+                <li ng-repeat="list in lists">
+                    <a ng-href="#tasks/{{$index}}">
+                        {{list.name}}
+                    </a>
+                </li>
+            </ul>
+        </main>
+
+        <footer>
+            <a href ng-click="addList()"><i class="fa fa-plus-square-o fa-2x"></i>Add list</a>
+        </footer>
+    </div>
+
+
+    <!-- Tasks -->
+    <div class="tasks">
+        <div ng-view></div>
+    </div>
+
+</div>
+<!--.wrapper-->
+
+
+
+</body>
+</html>
